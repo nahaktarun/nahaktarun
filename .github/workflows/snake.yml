@@ -1,0 +1,32 @@
+name: contribution graph
+
+on:
+  schedule:
+    - cron: "17 0 * * *" # daily, 00:17 UTC
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  generate:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      # renders the contribution grid as a snake animation, in the boot.svg palette
+      - uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/snake-dark.svg?color_snake=#d29922&color_dots=#161b22,#0b3d22,#13693a,#2ea043,#3fb950
+            dist/snake-light.svg?color_snake=#9a6700&color_dots=#ebedf0,#aceebb,#4ac26b,#2da44e,#116329
+
+      # publishes dist/ to the `output` branch, which README.md reads from
+      - uses: crazy-max/ghaction-github-pages@v5
+        with:
+          target_branch: output
+          build_dir: dist
+          commit_message: "chore: regenerate contribution graph"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

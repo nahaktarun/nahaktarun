@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="380" viewBox="0 0 760 380" xml:space="preserve" role="img" aria-labelledby="title desc">
+  <title id="title">tarun@bengaluru: boot sequence</title>
+  <desc id="desc">A terminal boots tarun.kernel: go, rust, typescript, c++ and python cores come online, /work/siemens and /archive/mercedes-benz are mounted, grpc, graphql, rabbitmq, kubernetes, redis, mentor and mtech-ai services start, then whoami prints: Tarun Nahak, senior software engineer, Bengaluru.</desc>
+  <style>
+    text { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", "DejaVu Sans Mono", monospace; font-size: 14px; white-space: pre; }
+    .fg   { fill: #c9d1d9; }
+    .dim  { fill: #6e7681; }
+    .ok   { fill: #3fb950; font-weight: 700; }
+    .svc  { fill: #58a6ff; }
+    .mag  { fill: #bc8cff; }
+    .note { fill: #d29922; }
+    .usr  { fill: #3fb950; font-weight: 700; }
+    .name { fill: #f0f6fc; font-weight: 700; }
+    .cur  { fill: #3fb950; }
+    .title { fill: #8b949e; font-size: 12px; }
+
+    /* each line appears instantly at its delay, like real terminal output */
+    @keyframes show  { from { opacity: 0; } }
+    @keyframes key   { from { fill-opacity: 0; } }
+    @keyframes blink { 50% { fill-opacity: 0; } }
+    .l   { animation: show .01s linear backwards; }
+    .k   { animation: key .01s linear backwards; }
+    .cur { animation: blink 1.06s step-end infinite; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .l, .k, .cur { animation: none; }
+    }
+  </style>
+
+  <!-- window -->
+  <rect x="0.5" y="0.5" width="759" height="379" rx="10" fill="#0d1117" stroke="#30363d"/>
+  <path d="M0.5 36 V10.5 A10 10 0 0 1 10.5 0.5 H749.5 A10 10 0 0 1 759.5 10.5 V36 Z" fill="#161b22"/>
+  <line x1="0.5" y1="36" x2="759.5" y2="36" stroke="#30363d"/>
+  <circle cx="22" cy="18" r="6" fill="#ff5f57"/>
+  <circle cx="42" cy="18" r="6" fill="#febc2e"/>
+  <circle cx="62" cy="18" r="6" fill="#28c840"/>
+  <text class="title" x="380" y="22" text-anchor="middle">tarun@bengaluru: ~ — zsh</text>
+
+
+  <!-- kernel messages -->
+  <text class="l" x="28" y="66" style="animation-delay:0.40s"><tspan class="dim">[    0.000000] </tspan><tspan class="fg">Booting </tspan><tspan class="mag">tarun.kernel</tspan><tspan class="fg"> on github.com/nahaktarun</tspan></text>
+  <text class="l" x="28" y="88" style="animation-delay:0.58s"><tspan class="dim">[    0.000412] </tspan><tspan class="fg">cpu: </tspan><tspan class="svc">go  rust  typescript  c++  python</tspan><tspan class="dim">  (5 cores online)</tspan></text>
+  <text class="l" x="28" y="110" style="animation-delay:0.76s"><tspan class="dim">[    0.001337] </tspan><tspan class="fg">mem: </tspan><tspan class="fg">backend systems · distributed services · dev tooling</tspan></text>
+
+  <!-- systemd units -->
+  <text class="l" x="28" y="132" style="animation-delay:1.10s"><tspan class="fg">[  </tspan><tspan class="ok">OK</tspan><tspan class="fg">  ] </tspan><tspan class="fg">Mounted </tspan><tspan class="svc">/work/siemens</tspan><tspan class="dim"> ................. </tspan><tspan class="note">senior software engineer</tspan></text>
+  <text class="l" x="28" y="154" style="animation-delay:1.38s"><tspan class="fg">[  </tspan><tspan class="ok">OK</tspan><tspan class="fg">  ] </tspan><tspan class="fg">Mounted </tspan><tspan class="svc">/archive/mercedes-benz</tspan><tspan class="dim"> ........ </tspan><tspan class="note">previous</tspan></text>
+  <text class="l" x="28" y="176" style="animation-delay:1.66s"><tspan class="fg">[  </tspan><tspan class="ok">OK</tspan><tspan class="fg">  ] </tspan><tspan class="fg">Started </tspan><tspan class="svc">grpc.service graphql.service rabbitmq.service</tspan></text>
+  <text class="l" x="28" y="198" style="animation-delay:1.94s"><tspan class="fg">[  </tspan><tspan class="ok">OK</tspan><tspan class="fg">  ] </tspan><tspan class="fg">Started </tspan><tspan class="svc">kubernetes.target redis.service</tspan></text>
+  <text class="l" x="28" y="220" style="animation-delay:2.22s"><tspan class="fg">[  </tspan><tspan class="ok">OK</tspan><tspan class="fg">  ] </tspan><tspan class="fg">Started </tspan><tspan class="svc">mentor.service</tspan><tspan class="dim"> ................ </tspan><tspan class="note">node.js backend track · LLD</tspan></text>
+  <text class="l" x="28" y="242" style="animation-delay:2.50s"><tspan class="fg">[  </tspan><tspan class="ok">OK</tspan><tspan class="fg">  ] </tspan><tspan class="fg">Started </tspan><tspan class="svc">mtech-ai@iit-bhilai.service</tspan><tspan class="dim"> ... </tspan><tspan class="note">in progress</tspan></text>
+  <text class="l" x="28" y="264" style="animation-delay:2.78s"><tspan class="fg">[  </tspan><tspan class="ok">OK</tspan><tspan class="fg">  ] </tspan><tspan class="fg">Reached target </tspan><tspan class="mag">tarun.target</tspan></text>
+
+  <!-- $ whoami: one character per keystroke -->
+  <text class="l" x="28" y="308" style="animation-delay:3.30s"><tspan class="usr">tarun@bengaluru</tspan><tspan class="fg">:</tspan><tspan class="svc">~</tspan><tspan class="fg">$ </tspan><tspan class="fg k" style="animation-delay:3.60s">w</tspan><tspan class="fg k" style="animation-delay:3.71s">h</tspan><tspan class="fg k" style="animation-delay:3.82s">o</tspan><tspan class="fg k" style="animation-delay:3.93s">a</tspan><tspan class="fg k" style="animation-delay:4.04s">m</tspan><tspan class="fg k" style="animation-delay:4.15s">i</tspan></text>
+
+  <text class="l" x="28" y="330" style="animation-delay:4.55s"><tspan class="name">Tarun Nahak</tspan><tspan class="dim">  ·  senior software engineer  ·  bengaluru, in</tspan></text>
+  <text class="l" x="28" y="352" style="animation-delay:4.80s"><tspan class="usr">tarun@bengaluru</tspan><tspan class="fg">:</tspan><tspan class="svc">~</tspan><tspan class="fg">$ </tspan><tspan class="cur" style="animation-delay:4.80s">█</tspan></text>
+</svg>
