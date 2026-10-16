@@ -16,7 +16,7 @@
      Active: <b>active (running)</b> in Bengaluru, IN
       Focus: backend services · distributed systems · developer tooling
    Studying: M.Tech in AI @ IIT Bhilai (in progress)
-  Mentoring: Node.js backend track: system design, LLD, mock interviews
+  Mentoring: Airtribe · Node.js backend track: system design, LLD, mock interviews
        Docs: <a href="https://tarunnahak.in">https://tarunnahak.in</a>
 </pre>
 
